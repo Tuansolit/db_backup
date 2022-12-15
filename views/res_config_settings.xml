@@ -1,0 +1,41 @@
+<odoo>
+    <record id="db_backup_res_config_settings_view_form" model="ir.ui.view">
+    <field name="name">res.config.settings.view.form.inherit.base.setup</field>
+    <field name="model">res.config.settings</field>
+    <field name="priority" eval="0" />
+    <field name="inherit_id" ref="base_setup.res_config_settings_view_form" />
+    <field name="arch" type="xml">
+        <xpath expr="//div[@id='contacts_settings']" position="before">
+            <div id="db_backup_settings">
+                <h2>Database Backup</h2>
+                <div class='row mt16 o_settings_container' id='backup_div'>
+                    <div class="col-12 col-lg-6 o_setting_box" title="...fggfhfgh" name="db_backup_setting_container">
+                        <div class="o_setting_left_pane">
+                            <field name="database_backup_config" />
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label string="Database Backup" for="database_backup_config" />
+                            <div class="text-muted" id="fghj">
+                                Configure database backups.
+                            </div>
+                            <div class="content-group" attrs="{'invisible': [('database_backup_config','=',False)]}">
+                                <div class="mt8">
+                                    <button type="action" name="%(db_backup.action_db_backup)d"
+                                        string="Configure Database Backups" icon="fa-arrow-right" class="btn-link" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box" id="activity_days">
+                        <label for="delete_after"/>
+                        <field name="delete_after"/>
+                        <div class="text-muted">
+                            Delete.
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </field>
+</record>
+</odoo>

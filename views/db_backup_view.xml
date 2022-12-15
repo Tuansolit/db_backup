@@ -1,0 +1,33 @@
+<odoo>
+    <record id="db_backup_tree" model="ir.ui.view">
+        <field name="name">db.backup.tree</field>
+        <field name="model">db.backup</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="database"/>
+                <field name="directory"/>
+            </tree>
+        </field>
+    </record>
+    <record id="db_backup_form_view" model="ir.ui.view">
+        <field name="name">Db Backup form</field>
+        <field name="model">db.backup</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="database"/>
+                            <field name="directory"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_db_backup" model="ir.actions.act_window">
+        <field name="name">Database Backup</field>
+        <field name="res_model">db.backup</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
